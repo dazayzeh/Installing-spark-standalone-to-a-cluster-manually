@@ -39,7 +39,7 @@ To launch a compiled Spark application to a cluster is by using the `spark-submi
   
   `[application-arguments]`
   
-#### Explinations
+#### Explanations
  
 --class: your application entry point
 
