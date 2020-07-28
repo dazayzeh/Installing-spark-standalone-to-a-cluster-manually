@@ -1,6 +1,6 @@
 # Installing-spark-standalone-to-a-cluster-manually
 
-## about
+## About
 Next to running Spark on the YARN cluster manager, Spark itself provides a standalone deploy mode. We can launch a standalone cluster manually  by starting a master and workers daemons by hand. This approach makes testing easier by running these daemons on a single machine.
 I'll walk you through launching the cluster, as well as connecting an app to the cluster, launching the app, where to view the monitoring and logging. 
 
