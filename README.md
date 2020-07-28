@@ -25,33 +25,53 @@ Or to run an interactive Spark shell against the cluster, run the following comm
 
 ### Launching an app 
 To launch a compiled Spark application to a cluster is by using the `spark-submit` script.  
-  `spark-submit --class <main-class> \
-  --master <master-url> \
-  --deploy-mode <deploy-mode> \
-  --conf <key>=<value> \
-  ... # other options
-  <application-jar> \
-  [application-arguments]`
+  `spark-submit --class <main-class> \`
+  
+ `--master <master-url> \`
+  
+  `--deploy-mode <deploy-mode> \`
+  
+  `--conf <key>=<value> \`
+  
+  `... # other options`
+  
+  `<application-jar> \`
+  
+  `[application-arguments]`
+  
+#### Explinations
  
 --class: your application entry point
+
 --master: The master URL for the cluster (e.g.`local` for one worker `local[k]` for k workers)
+
 --deploy-mode: `default: client`
+
 --conf: Spark configuration property in key=value format (e.g to enable history, --conf spark.eventLog.enabled=true).
+
 application-jar: a bundled jar for all of your application's dependencies.
+
 application-arguments: Arguments passed to the main method in the main class (e.g. could be files' path as input and output).
 
 ### Monitoring and Logging
 Spark’s standalone mode offers a user interface to monitor the cluster called 'spark server history'
 #### setup server history 
 The Spark History server allows us to review Spark application metrics after the application has been completed.
-1. Create ~/tmp/spark-events 
+1. Create ` ~/tmp/spark-events`
+
 2. Create a file spark-defaults.conf under the path [SPARK_PATH]/libexec/conf )
+
 3. Add these lines in the spark-defaults.conf file:
-  `spark.eventLog.enabled true`
+ 
+ `spark.eventLog.enabled true`
+  
   `spark.eventLog.dir file:/Users/<USER_NAME>/tmp/spark-events`
+  
   `spark.history.fs.logDirectory file:/Users/<USER_NAME>/tmp/spark-events`
+  
 
 4. Start the history server :` [SPARK_PATH]/sbin/start-history-server.sh`
+
 5. You can see the history http://localhost:18080
 
 
